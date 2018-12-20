@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.testarf.MainActivity">
+
+    <Button
+        android:id="@+id/sm2_key_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获取SM2密钥A"/>
+    <Button
+        android:id="@+id/sm2_encr_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用SM2进行加密A"/>
+    <Button
+        android:id="@+id/sm2_decr_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用SM2进行解密A"/>
+
+
+    <Button
+        android:id="@+id/sm2_sign_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用SM2生成数字签名"/>
+
+    <Button
+        android:id="@+id/sm2_verifysign_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用SM2验证数字签名"/>
+
+
+
+    <Button
+        android:id="@+id/sm2_encry_btnb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用SM2进行加密B"/>
+
+    <Button
+        android:id="@+id/sm2_decry_btnb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用SM2进行解密B"/>
+    <Button
+        android:id="@+id/rsa_encry_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用RSA进行加密"/>
+    <Button
+        android:id="@+id/rsa_decry_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用RSA进行解密"/>
+
+
+
+</LinearLayout>

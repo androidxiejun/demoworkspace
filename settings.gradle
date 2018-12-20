@@ -1,0 +1,2 @@
+include ':app', ':testsm2', ':testipc', ':testmessengerclient', ':testmessengerserver', ':testaidlserver', ':testaidlclient', ':testproviderserver', ':testproviderclient', ':testsocketserver', ':testsocketclient', ':testview', ':testplugina', ':testpluginb', ':testpluginc', ':testwindow', ':testdagger', ':testdagger2', ':testaar'
+

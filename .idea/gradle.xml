@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/testaar" />
+            <option value="$PROJECT_DIR$/testaidlclient" />
+            <option value="$PROJECT_DIR$/testaidlserver" />
+            <option value="$PROJECT_DIR$/testdagger" />
+            <option value="$PROJECT_DIR$/testdagger2" />
+            <option value="$PROJECT_DIR$/testipc" />
+            <option value="$PROJECT_DIR$/testmessengerclient" />
+            <option value="$PROJECT_DIR$/testmessengerserver" />
+            <option value="$PROJECT_DIR$/testplugina" />
+            <option value="$PROJECT_DIR$/testpluginb" />
+            <option value="$PROJECT_DIR$/testpluginc" />
+            <option value="$PROJECT_DIR$/testproviderclient" />
+            <option value="$PROJECT_DIR$/testproviderserver" />
+            <option value="$PROJECT_DIR$/testsm2" />
+            <option value="$PROJECT_DIR$/testsocketclient" />
+            <option value="$PROJECT_DIR$/testsocketserver" />
+            <option value="$PROJECT_DIR$/testview" />
+            <option value="$PROJECT_DIR$/testwindow" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
