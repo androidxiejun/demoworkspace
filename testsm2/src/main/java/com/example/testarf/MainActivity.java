@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private static final String DATA="D8B88534AA861A6F00863B12F421371ED3F93BB5E13316840B7B4879B2FA4DE9D801B233833AD0B4CC2C8359C64876E698458F6AFA59BCB91792554EF2E5B3F7EC9B1587A62101AB3CC41D34A40BC5DF00DBB65D9D3A6220B77E7C8FFAB15E768E18";
     private static final String DATA2="04619A44D1EC9861C7F64BE8F558A618D0C53224B3ED47FC4DA78538F6AE9245251AF50B4EDEB74C709DA9BDF40C541707BCA5E9F0B691DAC6402C00B2275F42CDA5BCC0620DEFB4FFF98F1985E5ACE8CDA90AA1F1C40DB13F6DC3986CBCC9A1B2238E0EB194B27C57E33FF345F7D011A9BC2576EB377BC6715C3E7C5CB7BA3CB6";
-
+    private static final String DATA3="04950B5C60D7CD47D99C7889CDF1FA412755C3F59CAA72C3BC80D8B8C7BC75B4E5A50C5532937AA4592C451CC2441E3E21994AA2B781D8A48B5F77D7D8FC8A959F045713C5A38A3AFD26BF3438284D00E0467F160109316662696275EEAC6F0A02259921F20C7AB078C0EA44E8545A3F5FE9F28CCBEB17B4D5E8395710761FFF9D69B277";
     // 国密规范测试用户ID
     private  String userId = "ALICE123@YAHOO.COM";
 
@@ -66,13 +66,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.sm2_encr_btn://使用SM2进行加密
                 String encryData="0001020304";
+                String encryDataA="55AA01000206B8A80C0A5050A0";
                 String plainText = "0";
 //                byte[] sourceData = plainText.getBytes();
                 byte[] sourceData =new byte[1];
                 sourceData[0]=0;
                 try {
 //                    SM2Utils.encrypt(Util.hexToByte(SM2Utils.sm2PubliKey),sourceData);
-                    SM2Utils.encrypt(Util.hexToByte(pubk2),Util.hexStringToBytes(encryData));
+                    SM2Utils.encrypt(Util.hexToByte(pubk2),Util.hexStringToBytes(encryDataA));
                 } catch (IOException e) { 
                     e.printStackTrace();
                 }
@@ -80,7 +81,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.sm2_decr_btn://使用SM2进行解密
                 try {
 //                    String result=new String(SM2Utils.decrypt(Util.hexToByte(SM2Utils.sm2PrivateKey), Util.hexToByte(SM2Utils.encrptStr)));
-                    byte [] data=SM2Utils.decrypt(Util.hexToByte(prik2),Util.hexToByte(SM2Utils.encrptStr));
+//                    byte [] data=SM2Utils.decrypt(Util.hexToByte(prik2),Util.hexToByte(SM2Utils.encrptStr));
+                    byte [] data=SM2Utils.decrypt(Util.hexToByte(prik2),Util.hexToByte(DATA3));
                     Log.i(MainActivity.TAG,"解密A获取到的数据:"+ java.util.Arrays.toString(data));
 //                    String result=new String(SM2Utils.decrypt(Util.hexToByte(prik2),Util.hexToByte(SM2Utils.encrptStr)));
 //                    Log.i(MainActivity.TAG,"解密A获取到的数据:"+result);
@@ -89,7 +91,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.sm2_sign_btn://使用SM2生成数字证书
-
                 try {
                     c = com.example.testarf.com.security.cipher.sm.SM2Utils.sign(userId.getBytes(), Base64.decode(prikS.getBytes()), sourceDataB);
                     Log.i(MainActivity.TAG,"生成的签名证书----"+ com.example.testarf.com.security.cipher.sm.Util.getHexString(c));

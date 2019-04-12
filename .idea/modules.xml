@@ -4,24 +4,14 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DemoTest3.iml" filepath="$PROJECT_DIR$/DemoTest3.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testaar/testaar.iml" filepath="$PROJECT_DIR$/testaar/testaar.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testaidlclient/testaidlclient.iml" filepath="$PROJECT_DIR$/testaidlclient/testaidlclient.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testaidlserver/testaidlserver.iml" filepath="$PROJECT_DIR$/testaidlserver/testaidlserver.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testdagger/testdagger.iml" filepath="$PROJECT_DIR$/testdagger/testdagger.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testdagger2/testdagger2.iml" filepath="$PROJECT_DIR$/testdagger2/testdagger2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testipc/testipc.iml" filepath="$PROJECT_DIR$/testipc/testipc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testmessengerclient/testmessengerclient.iml" filepath="$PROJECT_DIR$/testmessengerclient/testmessengerclient.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testmessengerserver/testmessengerserver.iml" filepath="$PROJECT_DIR$/testmessengerserver/testmessengerserver.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testplugina/testplugina.iml" filepath="$PROJECT_DIR$/testplugina/testplugina.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testpluginb/testpluginb.iml" filepath="$PROJECT_DIR$/testpluginb/testpluginb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testpluginc/testpluginc.iml" filepath="$PROJECT_DIR$/testpluginc/testpluginc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testproviderclient/testproviderclient.iml" filepath="$PROJECT_DIR$/testproviderclient/testproviderclient.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testproviderserver/testproviderserver.iml" filepath="$PROJECT_DIR$/testproviderserver/testproviderserver.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testsm2/testsm2.iml" filepath="$PROJECT_DIR$/testsm2/testsm2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testsocketclient/testsocketclient.iml" filepath="$PROJECT_DIR$/testsocketclient/testsocketclient.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testsocketserver/testsocketserver.iml" filepath="$PROJECT_DIR$/testsocketserver/testsocketserver.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testview/testview.iml" filepath="$PROJECT_DIR$/testview/testview.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testwindow/testwindow.iml" filepath="$PROJECT_DIR$/testwindow/testwindow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/serialportlibrary/serialportlibrary.iml" filepath="$PROJECT_DIR$/serialportlibrary/serialportlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/serialtest/serialtest.iml" filepath="$PROJECT_DIR$/serialtest/serialtest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testdagger3/testdagger3.iml" filepath="$PROJECT_DIR$/testdagger3/testdagger3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testdagger4/testdagger4.iml" filepath="$PROJECT_DIR$/testdagger4/testdagger4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testfragmentmvp/testfragmentmvp.iml" filepath="$PROJECT_DIR$/testfragmentmvp/testfragmentmvp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testgreendao/testgreendao.iml" filepath="$PROJECT_DIR$/testgreendao/testgreendao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testport/testport.iml" filepath="$PROJECT_DIR$/testport/testport.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zzsm6demo/zzsm6demo.iml" filepath="$PROJECT_DIR$/zzsm6demo/zzsm6demo.iml" />
     </modules>
   </component>
 </project>

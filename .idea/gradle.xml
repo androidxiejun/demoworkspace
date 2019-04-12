@@ -9,24 +9,14 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/testaar" />
-            <option value="$PROJECT_DIR$/testaidlclient" />
-            <option value="$PROJECT_DIR$/testaidlserver" />
-            <option value="$PROJECT_DIR$/testdagger" />
-            <option value="$PROJECT_DIR$/testdagger2" />
-            <option value="$PROJECT_DIR$/testipc" />
-            <option value="$PROJECT_DIR$/testmessengerclient" />
-            <option value="$PROJECT_DIR$/testmessengerserver" />
-            <option value="$PROJECT_DIR$/testplugina" />
-            <option value="$PROJECT_DIR$/testpluginb" />
-            <option value="$PROJECT_DIR$/testpluginc" />
-            <option value="$PROJECT_DIR$/testproviderclient" />
-            <option value="$PROJECT_DIR$/testproviderserver" />
-            <option value="$PROJECT_DIR$/testsm2" />
-            <option value="$PROJECT_DIR$/testsocketclient" />
-            <option value="$PROJECT_DIR$/testsocketserver" />
-            <option value="$PROJECT_DIR$/testview" />
-            <option value="$PROJECT_DIR$/testwindow" />
+            <option value="$PROJECT_DIR$/serialportlibrary" />
+            <option value="$PROJECT_DIR$/serialtest" />
+            <option value="$PROJECT_DIR$/testdagger3" />
+            <option value="$PROJECT_DIR$/testdagger4" />
+            <option value="$PROJECT_DIR$/testfragmentmvp" />
+            <option value="$PROJECT_DIR$/testgreendao" />
+            <option value="$PROJECT_DIR$/testport" />
+            <option value="$PROJECT_DIR$/zzsm6demo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

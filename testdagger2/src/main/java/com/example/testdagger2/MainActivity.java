@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btn)
     public void onViewClick(){
         Util.getCurrentTime();
-        Intent intent=new Intent(MainActivity.this, SecondActivity.class);
-        startActivity(intent);
+//        Intent intent=new Intent(MainActivity.this, SecondActivity.class);
+//        startActivity(intent);
         Log.i(TAG,"mStudent-----"+mStudent.toString());
         Log.i(TAG,"mSharedPreferences-----"+mSharedPreferences.toString());
     }

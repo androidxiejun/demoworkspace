@@ -1,17 +1,17 @@
 package com.example.testdagger3;
 
+import android.util.Log;
+
 /**
- * Created by AndroidXJ on 2018/12/18.
+ * Created by AndroidXJ on 2019/3/18.
  */
 
 public class Student {
-    private String name;
-
-    public String getName() {
-        return name;
+    private Master mMaster;
+    public Student(Master master){
+        this.mMaster=master;
     }
-
-    public void setName(String name) {
-        this.name = name;
+    public String eatFruit(String fruit){
+        return fruit;
     }
 }

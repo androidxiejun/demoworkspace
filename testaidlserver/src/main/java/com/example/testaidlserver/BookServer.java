@@ -45,26 +45,22 @@ public class BookServer extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        int check = checkCallingOrSelfPermission("com.example.testaidlserver.TEST");
-        if (check == PackageManager.PERMISSION_DENIED) {
-            Log.i(TAG,"onBind erro!");
-            return null;
-        }
+//        int check = checkCallingOrSelfPermission("com.example.testaidlserver.TEST");
+//        if (check == PackageManager.PERMISSION_DENIED) {
+//            Log.i(TAG,"onBind erro!");
+//            return null;
+//        }
         return new MyBinder();
     }
-
     class MyBinder extends IBookInterface.Stub {
-
         @Override
         public List<Book> getBookList() throws RemoteException {
             return mBookList;
         }
-
         @Override
         public void addBook(Book book) throws RemoteException {
             mBookList.add(book);
         }
-
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
         @Override
         public void registerListener(IOnNewBookArrivedListener listener) throws RemoteException {
@@ -78,7 +74,6 @@ public class BookServer extends Service {
             mListenerList.register(listener);
             Log.i(TAG, "注册的数量a----" + mListenerList.getRegisteredCallbackCount());
         }
-
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
         @Override
         public void unRegisterListener(IOnNewBookArrivedListener listener) throws RemoteException {
@@ -91,10 +86,8 @@ public class BookServer extends Service {
 //            Log.i(TAG, "register size : " + mListeners.size());
             mListenerList.unregister(listener);
             Log.i(TAG, "注册的数量b----" + mListenerList.getRegisteredCallbackCount());
-
         }
     }
-
     private void onNewBookArrived(Book book) {
 //        mBookList.add(book);
 //        for (int i = 0; i < mListeners.size(); i++) {
@@ -119,9 +112,7 @@ public class BookServer extends Service {
         }
         mListenerList.finishBroadcast();
     }
-
     private class ServiceWorker implements Runnable {
-
         @Override
         public void run() {
             while (!mIsServiceDestroyed.get()) {

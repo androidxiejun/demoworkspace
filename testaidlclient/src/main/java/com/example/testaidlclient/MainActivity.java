@@ -19,48 +19,8 @@ import com.example.testaidlserver.IOnNewBookArrivedListener;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
+    private static final String TAG = MainActivity.class.getSimpleName();
     private IBookInterface mRemoteManager;
-
-    private Handler mHamdler=new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-
-        }
-    };
-
-    private IOnNewBookArrivedListener mIOnNewBookArrivedListener=new IOnNewBookArrivedListener.Stub() {
-        //TODO  运行在Binder线程池中，不能执行UI操作
-        @Override
-        public void onNewBookArrived(Book newBook) throws RemoteException {
-            Log.i(TAG,"到新书啦----"+newBook.toString());
-        }
-    };
-
-    private ServiceConnection mServiceConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName name, IBinder service) {
-            //TODO  运行在主线程中
-            try {
-                IBookInterface bookInterface = IBookInterface.Stub.asInterface(service);
-                mRemoteManager=bookInterface;
-                List<Book> list = bookInterface.getBookList();
-                Log.i(TAG, "list:" + list.toString());
-                Book newBook = new Book("冰与火之歌第三季", 90);
-                bookInterface.addBook(newBook);
-                List<Book> list2 = bookInterface.getBookList();
-                Log.i(TAG, "list2:" + list2.toString());
-                bookInterface.registerListener(mIOnNewBookArrivedListener);
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            }
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName name) {
-            //TODO  运行在主线程中
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,4 +44,35 @@ public class MainActivity extends AppCompatActivity {
         unbindService(mServiceConnection);
         super.onDestroy();
     }
+
+    private IOnNewBookArrivedListener mIOnNewBookArrivedListener=new IOnNewBookArrivedListener.Stub() {
+        //TODO  运行在Binder线程池中，不能执行UI操作
+        @Override
+        public void onNewBookArrived(Book newBook) throws RemoteException {
+            Log.i(TAG,"到新书啦----"+newBook.toString());
+        }
+    };
+    private ServiceConnection mServiceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            //TODO  运行在主线程中
+            try {
+                IBookInterface bookInterface = IBookInterface.Stub.asInterface(service);
+                mRemoteManager=bookInterface;
+                List<Book> list = bookInterface.getBookList();
+                Log.i(TAG, "list:" + list.toString());
+                Book newBook = new Book("冰与火之歌第三季", 90);
+                bookInterface.addBook(newBook);
+                List<Book> list2 = bookInterface.getBookList();
+                Log.i(TAG, "list2:" + list2.toString());
+                bookInterface.registerListener(mIOnNewBookArrivedListener);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            //TODO  运行在主线程中
+        }
+    };
 }
