@@ -125,21 +125,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     studentScore.setStudentId(student.getId());
                     GreenDaoUtil.getInstance().getDaoSession().getStudentScoreDao().save(studentScore);
                 }
-
-                Score scoreNew = new Score();
-                scoreNew.setScoreName("英语");
-                scoreNew.setScoreCode("666");
-                GreenDaoUtil.getInstance().getDaoSession().getScoreDao().save(scoreNew);
-                for (int i = 0; i < 6; i++) {
-                    Student student1 = new Student();
-                    student1.setName("老王" + i);
-                    student1.setAge("1" + i);
-                    GreenDaoUtil.getInstance().getDaoSession().getStudentDao().save(student1);
-                    StudentScore studentScore = new StudentScore();
-                    studentScore.setStudentId(student1.getId());
-                    studentScore.setScoreId(scoreNew.getId());
-                    GreenDaoUtil.getInstance().getDaoSession().getStudentScoreDao().save(studentScore);
-                }
+//
+//                Score scoreNew = new Score();
+//                scoreNew.setScoreName("英语");
+//                scoreNew.setScoreCode("666");
+//                GreenDaoUtil.getInstance().getDaoSession().getScoreDao().save(scoreNew);
+//                for (int i = 0; i < 6; i++) {
+//                    Student student1 = new Student();
+//                    student1.setName("老王" + i);
+//                    student1.setAge("1" + i);
+//                    GreenDaoUtil.getInstance().getDaoSession().getStudentDao().save(student1);
+//                    StudentScore studentScore = new StudentScore();
+//                    studentScore.setStudentId(student1.getId());
+//                    studentScore.setScoreId(scoreNew.getId());
+//                    GreenDaoUtil.getInstance().getDaoSession().getStudentScoreDao().save(studentScore);
+//                }
 
                 break;
             case R.id.data_muti_get:
@@ -155,13 +155,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                        Log.i(TAG,"scoreCode-----"+score.getScoreCode());
 //                    }
 //                }
-                Score score = GreenDaoUtil.getInstance().getDaoSession().getScoreDao().queryBuilder().where(ScoreDao.Properties.ScoreCode.eq("666")).unique();
-                List<Student> studentList = score.getStudentList();
-                if (studentList != null && studentList.size() > 0) {
-                    for (Student student2 : studentList) {
-                        Log.i(TAG, "学生名称-----" + student2.getName());
-                    }
-                }
+//                Score score = GreenDaoUtil.getInstance().getDaoSession().getScoreDao().queryBuilder().where(ScoreDao.Properties.ScoreCode.eq("666")).unique();
+//                List<Student> studentList = score.getStudentList();
+//                if (studentList != null && studentList.size() > 0) {
+//                    for (Student student2 : studentList) {
+//                        Log.i(TAG, "学生名称-----" + student2.getName());
+//                    }
+//                }
                 break;
         }
     }

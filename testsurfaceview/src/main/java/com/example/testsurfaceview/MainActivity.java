@@ -62,6 +62,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
         mAspectLayout = findViewById(R.id.layout_aspect);;
         mCameraSurfaceView = new CameraSurfaceView2(this);
         mAspectLayout.addView(mCameraSurfaceView);
+//        mCameraSurfaceView.setLayoutParams(new RelativeLayout.LayoutParams(1, 1));
+        FaceCamera.getInstance().onResume(MainActivity.this, mCameraSurfaceView);
         mOrientation = CameraUtils.calculateCameraPreviewOrientation(MainActivity.this);
         mBtnTake = findViewById(R.id.btn_take);
         mBtnTake.setOnClickListener(this);
@@ -87,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
     protected void onResume() {
         super.onResume();
         if (mCameraRequested) {
-            CameraUtils.startPreview();
+//            CameraUtils.startPreview();
         }
     }
 
