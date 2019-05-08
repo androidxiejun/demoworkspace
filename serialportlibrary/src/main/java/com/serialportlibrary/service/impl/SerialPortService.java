@@ -3,6 +3,7 @@ package com.serialportlibrary.service.impl;
 import android.os.SystemClock;
 
 import android.serialport.SerialPort;
+import android.util.Log;
 
 import com.serialportlibrary.service.ISerialPortService;
 import com.serialportlibrary.util.ByteStringUtil;
@@ -71,23 +72,33 @@ public class SerialPortService implements ISerialPortService {
                 }
                 outputStream.write(data);
                 outputStream.flush();
-                LogUtil.e("发送数据-------" + Arrays.toString(data));
+//                LogUtil.e("发送数据-------" + Arrays.toString(data));
                 Long time = System.currentTimeMillis();
                 //暂存每次返回数据长度，不变的时候为读取完数据
                 int receiveLeanth = 0;
                 while (System.currentTimeMillis() - time < mTimeOut) {
                     available = inputStream.available();
                     if (available > 0 && available == receiveLeanth) {
-                        returnData = new byte[available];
-                        inputStream.read(returnData);
-                        LogUtil.e("接收--数据-------" + Arrays.toString(returnData));
-                        return returnData;
+                        //由于有些数据传输中途会停顿，这里也停顿一会，确保数据接受完整
+                        Thread.sleep(50);
+                        available = inputStream.available();
+                        if (available == receiveLeanth) {
+                            returnData = new byte[available];
+                            inputStream.read(returnData);
+//                            LogUtil.e("接收--数据-------" + Arrays.toString(returnData));
+                            return returnData;
+                        } else {
+                            receiveLeanth = available;
+                        }
                     } else {
                         receiveLeanth = available;
                     }
                     SystemClock.sleep(RE_READ_WAITE_TIME);
                 }
+
             } catch (IOException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             return null;

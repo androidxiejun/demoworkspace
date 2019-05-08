@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="port"
-        android:text="dev/ttyS0"/>
+        android:text="dev/ttyS4"/>
 
     <EditText
         android:id="@+id/edit_baudrate"
@@ -44,9 +44,39 @@
         android:hint="接收到的数据"/>
 
     <Button
+        android:id="@+id/btn_open_gate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开闸机"/>
+
+    <Button
+        android:id="@+id/btn_close_gate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关闭闸机"/>
+
+    <Button
+        android:id="@+id/btn_infrared"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="红外检测"/>
+
+    <Button
+        android:id="@+id/btn_gate_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="闸机检测"/>
+
+
+    <Button
         android:id="@+id/btn_send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="发送"/>
+    <Button
+        android:id="@+id/btn_turn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="进制转换"/>
 
 </LinearLayout>

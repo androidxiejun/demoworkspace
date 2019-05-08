@@ -17,6 +17,7 @@
       <module fileurl="file://$PROJECT_DIR$/testport/testport.iml" filepath="$PROJECT_DIR$/testport/testport.iml" />
       <module fileurl="file://$PROJECT_DIR$/testrxretrofit/testrxretrofit.iml" filepath="$PROJECT_DIR$/testrxretrofit/testrxretrofit.iml" />
       <module fileurl="file://$PROJECT_DIR$/testsurfaceview/testsurfaceview.iml" filepath="$PROJECT_DIR$/testsurfaceview/testsurfaceview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textrxretrofit/textrxretrofit.iml" filepath="$PROJECT_DIR$/textrxretrofit/textrxretrofit.iml" />
       <module fileurl="file://$PROJECT_DIR$/zzsm6demo/zzsm6demo.iml" filepath="$PROJECT_DIR$/zzsm6demo/zzsm6demo.iml" />
     </modules>
   </component>
