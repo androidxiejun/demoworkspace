@@ -5,9 +5,14 @@ import android.util.Log;
 import com.example.textrxretrofit.callback.INetCallback;
 import com.google.gson.Gson;
 
+import java.io.IOException;
 import java.util.List;
 
+import io.reactivex.Observer;
+import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
@@ -74,6 +79,38 @@ public class RetrofitClient {
                     @Override
                     public void onNext(ResponseBody responseBody) {
                         callback.success(responseBody);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        callback.failed(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+    }
+
+    public void uploadRx(String name, final INetCallback<String> callback) {
+        mService.listReposRx(name)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ResponseBody>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(ResponseBody responseBody) {
+                        try {
+                            callback.success(responseBody.string());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
 
                     @Override

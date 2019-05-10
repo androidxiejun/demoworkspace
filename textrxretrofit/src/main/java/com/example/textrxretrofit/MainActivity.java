@@ -17,11 +17,13 @@ import java.io.IOException;
 import io.reactivex.Observable;
 import io.reactivex.functions.Consumer;
 import okhttp3.ResponseBody;
+import retrofit2.Retrofit;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    public static final String TAG=MainActivity.class.getSimpleName();
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    public static final String TAG = MainActivity.class.getSimpleName();
 
     private Button mUploadBtn;
+    private Button mUploadBtn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,40 +41,54 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
-        mUploadBtn=findViewById(R.id.btn_upload);
+        mUploadBtn = findViewById(R.id.btn_upload);
         mUploadBtn.setOnClickListener(this);
+        mUploadBtn2 = findViewById(R.id.btn_upload_two);
+        mUploadBtn2.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btn_upload:
-                String s = Util.getNowDate();
-                Log.i(TAG,"现在的时间-----"+s);
-//                RetrofitClient.getInstance().uploadRx(new INetCallback<ResponseBody>() {
+                RetrofitClient.getInstance().uploadRx("octocat", new INetCallback<String>() {
+                    @Override
+                    public void success(String data) {
+                        Log.i(TAG, "上传数据成功-----" + data);
+                    }
+
+                    @Override
+                    public void failed(String message) {
+                        Log.i(TAG, "上传数据失败-----" + message);
+                    }
+                });
+
+                break;
+            case R.id.btn_upload_two:
+//                NetLoader.getInstance().getGithub("octocat").subscribe(new Consumer<ResponseBody>() {
 //                    @Override
-//                    public void success(ResponseBody responseBody) {
-//                        try {
-//                            Log.i(TAG,"上传数据成功-----"+responseBody.string().toString());
-//                        } catch (IOException e) {
-//                            e.printStackTrace();
-//                        }
+//                    public void accept(ResponseBody responseBody) throws Exception {
+//                        Log.i(TAG, "上传数据成功-----" + responseBody.string().toString());
 //                    }
-//
+//                }, new Consumer<Throwable>() {
 //                    @Override
-//                    public void failed(String message) {
-//                        Log.i(TAG,"上传数据失败-----"+message);
+//                    public void accept(Throwable throwable) throws Exception {
+//                        Log.i(TAG, "上传数据失败-----" + throwable.getMessage());
 //                    }
 //                });
-                NetLoader.getInstance().getGithub("message").subscribe(new Consumer<ResponseBody>() {
+                RetrofitClient.getInstance().uploadRx(new INetCallback<ResponseBody>() {
                     @Override
-                    public void accept(ResponseBody responseBody) throws Exception {
-                        Log.i(TAG, "上传数据成功-----" + responseBody.string().toString());
+                    public void success(ResponseBody responseBody) {
+                        try {
+                            Log.i(TAG, "上传数据成功-----" + responseBody.string());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
-                }, new Consumer<Throwable>() {
+
                     @Override
-                    public void accept(Throwable throwable) throws Exception {
-                        Log.i(TAG,"上传数据失败-----"+throwable.getMessage());
+                    public void failed(String message) {
+                        Log.i(TAG, "上传数据失败-----" + message);
                     }
                 });
                 break;

@@ -15,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/testfragmentmvp/testfragmentmvp.iml" filepath="$PROJECT_DIR$/testfragmentmvp/testfragmentmvp.iml" />
       <module fileurl="file://$PROJECT_DIR$/testgreendao/testgreendao.iml" filepath="$PROJECT_DIR$/testgreendao/testgreendao.iml" />
       <module fileurl="file://$PROJECT_DIR$/testport/testport.iml" filepath="$PROJECT_DIR$/testport/testport.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testrxjava/testrxjava.iml" filepath="$PROJECT_DIR$/testrxjava/testrxjava.iml" />
       <module fileurl="file://$PROJECT_DIR$/testrxretrofit/testrxretrofit.iml" filepath="$PROJECT_DIR$/testrxretrofit/testrxretrofit.iml" />
       <module fileurl="file://$PROJECT_DIR$/testsurfaceview/testsurfaceview.iml" filepath="$PROJECT_DIR$/testsurfaceview/testsurfaceview.iml" />
       <module fileurl="file://$PROJECT_DIR$/textrxretrofit/textrxretrofit.iml" filepath="$PROJECT_DIR$/textrxretrofit/textrxretrofit.iml" />
