@@ -1,3 +1,3 @@
-include ':app', ':testfragmentmvp', ':testdagger3', ':testdagger4', ':testgreendao', ':serialportlibrary', ':serialtest', ':testport', ':zzsm6demo', ':testsurfaceview', ':testannotation', ':testeventbus', ':testarouter', ':testaddview', ':testrxretrofit', ':textrxretrofit', ':testrxjava'
+include ':app', ':testfragmentmvp', ':testdagger3', ':testdagger4', ':testgreendao', ':serialportlibrary', ':serialtest', ':testCamera', ':zzsm6demo', ':testsurfaceview', ':testannotation', ':testeventbus', ':testarouter', ':testaddview', ':testrxretrofit', ':textrxretrofit', ':testrxjava'
 //include ':testsm2', ':testmessengerclient', ':testmessengerserver', ':testaidlserver', ':testdagger', ':testdagger2', ':testhttps', ':testaidlclient', ':testcrash', ':testlru', ':testoicasso'
 //include ':sM62Demo'

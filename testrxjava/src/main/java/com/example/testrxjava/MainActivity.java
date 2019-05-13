@@ -1,5 +1,7 @@
 package com.example.testrxjava;
 
+import android.content.Intent;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +25,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
+import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
 
 
@@ -91,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * interval 定时器
      */
     private void initTime() {
-        Observable.interval(2, TimeUnit.SECONDS).subscribe(new Consumer<Long>() {
+        Observable.interval(1, TimeUnit.SECONDS).subscribe(new Consumer<Long>() {
             @Override
             public void accept(Long aLong) throws Exception {
                 Log.i(TAG, "收到消息------");
@@ -191,12 +194,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }));
     }
 
+    private void dooObServerFileter() {
+        Observable.just(1, 2, 3).filter(new Predicate<Integer>() {
+            @Override
+            public boolean test(Integer integer) throws Exception {
+                return integer > 2;
+            }
+        }).compose(this.<Integer>applyObservableAsync())
+                .subscribe(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) throws Exception {
+                        Log.i(TAG, "data------" + integer);
+                    }
+                });
+    }
+
+    private void doObservalLambda() {
+        Observable.create(new ObservableOnSubscribe<String>() {
+            @Override
+            public void subscribe(ObservableEmitter<String> e) throws Exception {
+                e.onNext("11111");
+            }
+        }).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(data -> {
+                    Log.i(TAG, "data------" + data);
+                }, erro->{
+                    Log.i(TAG,"报错了-----"+erro);
+                });
+    }
+
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_turn:
-                doObserverCompose2();
+                doObservalLambda();
                 break;
             case R.id.btn_time:
                 initTime();
@@ -213,4 +246,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         };
     }
+
 }

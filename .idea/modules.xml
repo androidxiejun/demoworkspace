@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/serialportlibrary/serialportlibrary.iml" filepath="$PROJECT_DIR$/serialportlibrary/serialportlibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/serialtest/serialtest.iml" filepath="$PROJECT_DIR$/serialtest/serialtest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testCamera/testport.iml" filepath="$PROJECT_DIR$/testCamera/testport.iml" />
       <module fileurl="file://$PROJECT_DIR$/testaddview/testaddview.iml" filepath="$PROJECT_DIR$/testaddview/testaddview.iml" />
       <module fileurl="file://$PROJECT_DIR$/testannotation/testannotation.iml" filepath="$PROJECT_DIR$/testannotation/testannotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/testarouter/testarouter.iml" filepath="$PROJECT_DIR$/testarouter/testarouter.iml" />
@@ -14,7 +15,6 @@
       <module fileurl="file://$PROJECT_DIR$/testeventbus/testeventbus.iml" filepath="$PROJECT_DIR$/testeventbus/testeventbus.iml" />
       <module fileurl="file://$PROJECT_DIR$/testfragmentmvp/testfragmentmvp.iml" filepath="$PROJECT_DIR$/testfragmentmvp/testfragmentmvp.iml" />
       <module fileurl="file://$PROJECT_DIR$/testgreendao/testgreendao.iml" filepath="$PROJECT_DIR$/testgreendao/testgreendao.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testport/testport.iml" filepath="$PROJECT_DIR$/testport/testport.iml" />
       <module fileurl="file://$PROJECT_DIR$/testrxjava/testrxjava.iml" filepath="$PROJECT_DIR$/testrxjava/testrxjava.iml" />
       <module fileurl="file://$PROJECT_DIR$/testrxretrofit/testrxretrofit.iml" filepath="$PROJECT_DIR$/testrxretrofit/testrxretrofit.iml" />
       <module fileurl="file://$PROJECT_DIR$/testsurfaceview/testsurfaceview.iml" filepath="$PROJECT_DIR$/testsurfaceview/testsurfaceview.iml" />
