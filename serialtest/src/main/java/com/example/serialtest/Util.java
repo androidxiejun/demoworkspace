@@ -35,14 +35,17 @@ public class Util {
 
     /**
      * 检测1-8号红外状态，以及四号位上的无线开关状态
+     *
      * @param data
      * @return
      */
     public static int doIt(byte data) {
-        for (int j = 0; j < 8; j++) {
-            int result = data & (0x01 << j);
-            Log.i(MainActivity.TAG,"状态------"+result);
-        }
-        return 0;
+//        for (int j = 0; j < 8; j++) {
+//            int result = data & (0x01 << j);
+//            Log.i(MainActivity.TAG,"状态------"+result);
+//        }
+//        return 0;
+
+        return data & (0x01 << 0);
     }
 }

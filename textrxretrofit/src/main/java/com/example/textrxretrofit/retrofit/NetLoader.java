@@ -30,7 +30,8 @@ public class NetLoader extends ObjectLoader {
         }
         return mService;
     }
-    public Observable<ResponseBody>getGithub(String name){
+
+    public Observable<ResponseBody> getGithub(String name) {
         return observe(getService().listReposRx(name)).map(new Function<ResponseBody, ResponseBody>() {
             @Override
             public ResponseBody apply(ResponseBody responseBody) throws Exception {
