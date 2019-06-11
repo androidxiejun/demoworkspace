@@ -11,21 +11,12 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/serialportlibrary" />
             <option value="$PROJECT_DIR$/serialtest" />
-            <option value="$PROJECT_DIR$/testCamera" />
-            <option value="$PROJECT_DIR$/testaddview" />
-            <option value="$PROJECT_DIR$/testannotation" />
-            <option value="$PROJECT_DIR$/testarouter" />
-            <option value="$PROJECT_DIR$/testdagger3" />
-            <option value="$PROJECT_DIR$/testdagger4" />
-            <option value="$PROJECT_DIR$/testeventbus" />
-            <option value="$PROJECT_DIR$/testfragmentmvp" />
+            <option value="$PROJECT_DIR$/testarcface" />
+            <option value="$PROJECT_DIR$/testbar" />
             <option value="$PROJECT_DIR$/testgreendao" />
             <option value="$PROJECT_DIR$/testmodule" />
             <option value="$PROJECT_DIR$/testrxjava" />
-            <option value="$PROJECT_DIR$/testrxretrofit" />
-            <option value="$PROJECT_DIR$/testsurfaceview" />
             <option value="$PROJECT_DIR$/textrxretrofit" />
-            <option value="$PROJECT_DIR$/zzsm6demo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

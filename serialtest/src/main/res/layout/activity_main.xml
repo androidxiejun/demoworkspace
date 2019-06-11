@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="port"
-        android:text="dev/ttyS4" />
+        android:text="dev/ttyS1" />
 
     <EditText
         android:id="@+id/edit_baudrate"
@@ -97,5 +97,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="清除数据" />
+
+    <Button
+        android:id="@+id/btn_open_light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开启补光灯" />
+
+    <Button
+        android:id="@+id/btn_close_light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关闭补光灯" />
 
 </LinearLayout>

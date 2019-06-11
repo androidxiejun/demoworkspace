@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private SerialPortService serialPortService;
 
-    private Button mSendBtn, mBtnOpenGate, mBtnCloseGate, mBtnInfrared, mBtnGateStatus, mBtnTurn, mBtnGunOpen, mBtnGunTYpe, mBtnClear;
+    private Button mSendBtn, mBtnOpenGate, mBtnCloseGate, mBtnInfrared, mBtnGateStatus, mBtnTurn, mBtnGunOpen, mBtnGunTYpe, mBtnClear, mBtnOPenLight, mBtnCloseLight;
 
     //开启1号继电器
     public static final byte[] cmd_OPEN = {(byte) 0x01, (byte) 0x05, (byte) 0x00, (byte) 0x00, (byte) 0xFF, (byte) 0x00, (byte) 0x8C, (byte) 0x3A};
@@ -45,6 +45,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final byte[] cmd_GUN_GATE_OPEN = {(byte) 0x55, (byte) 0xAA, (byte) 0x01, (byte) 0x00, (byte) 0x01, (byte) 0x00, (byte) 0x01};
     //检测枪柜门状态
     public static final byte[] cmd_GUN_GATE_TYPE = {(byte) 0x55, (byte) 0xAA, (byte) 0x01, (byte) 0x00, (byte) 0x02, (byte) 0x00, (byte) 0x02};
+
+    //开启补光灯
+    public static final byte[] cmd_LIGHT_OPEN = {(byte) 0x55, (byte) 0xAA, (byte) 0x08, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x07};
+    //关闭补光灯
+    public static final byte[] cmd_LIGHT_CLOSE = {(byte) 0x55, (byte) 0xAA, (byte) 0x08, (byte) 0x00, (byte) 0x01, (byte) 0x00, (byte) 0x08};
 
 
     @Override
@@ -78,6 +83,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtnCloseGate = findViewById(R.id.btn_close_gate);
         mBtnInfrared = findViewById(R.id.btn_infrared);
         mBtnGateStatus = findViewById(R.id.btn_gate_status);
+        mBtnOPenLight = findViewById(R.id.btn_open_light);
+        mBtnCloseLight = findViewById(R.id.btn_close_light);
+
         mSendBtn.setOnClickListener(this);
         mBtnTurn = findViewById(R.id.btn_turn);
         mBtnOpenGate.setOnClickListener(this);
@@ -85,6 +93,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtnInfrared.setOnClickListener(this);
         mBtnGateStatus.setOnClickListener(this);
         mBtnTurn.setOnClickListener(this);
+        mBtnOPenLight.setOnClickListener(this);
+        mBtnCloseLight.setOnClickListener(this);
 
         mBtnGunOpen = findViewById(R.id.gun_gate_open);
         mBtnGunTYpe = findViewById(R.id.gun_gate_type);
@@ -99,15 +109,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_open_gate:
-                byte[] byteOpen = serialPortService.sendData(cmd_OPEN);
-//                byte[] byteOpen = serialPortService.sendData(cmd_OPEN_STR);
-                handResultData(byteOpen);
-                Util.doIt(byteOpen[4]);
+//                byte[] byteOpen = serialPortService.sendData(cmd_OPEN);
+////                byte[] byteOpen = serialPortService.sendData(cmd_OPEN_STR);
+//                handResultData(byteOpen);
+//                Util.doIt(byteOpen[4]);
+
+                byte[] receiveLightData = serialPortService.sendData(cmd_LIGHT_OPEN);
+                Log.i(TAG, "receiveData-----" + receiveLightData);
+
+
                 break;
             case R.id.btn_close_gate:
-//                byte[] byteClose = serialPortService.sendData(cmd_CLOSE);
-                byte[] byteClose = serialPortService.sendData(cmd_CLOSE_STR);
-                handResultData(byteClose);
+////                byte[] byteClose = serialPortService.sendData(cmd_CLOSE);
+//                byte[] byteClose = serialPortService.sendData(cmd_CLOSE_STR);
+//                handResultData(byteClose);
+
+                byte[] receiveLightData2 = serialPortService.sendData(cmd_LIGHT_CLOSE);
+                Log.i(TAG, "receiveData-----" + receiveLightData2);
                 break;
             case R.id.btn_infrared:
 //                byte[] byteInfrared = serialPortService.sendData(cmd_INFRARED);
@@ -130,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_send:
                 String sendData = mDataSendEdit.getText().toString();
                 byte[] receiveData = serialPortService.sendData(sendData);
-                Log.i(TAG,"receiveData-----"+receiveData);
+                Log.i(TAG, "receiveData-----" + receiveData);
                 handResultData(receiveData);
 
 //                String data = Integer.toHexString(25);
@@ -144,6 +162,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_clear:
                 mBaudrateEdit.setText("");
                 mPortEdit.setText("");
+                break;
+            case R.id.btn_open_light:
+//                byte[] receiveLightData = serialPortService.sendData(cmd_LIGHT_OPEN);
+//                Log.i(TAG, "receiveData-----" + receiveLightData);
+                break;
+            case R.id.btn_close_light:
+//                byte[] receiveLightData2 = serialPortService.sendData(cmd_LIGHT_CLOSE);
+//                Log.i(TAG, "receiveData-----" + receiveLightData2);
                 break;
         }
     }

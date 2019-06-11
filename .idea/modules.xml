@@ -6,22 +6,13 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/serialportlibrary/serialportlibrary.iml" filepath="$PROJECT_DIR$/serialportlibrary/serialportlibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/serialtest/serialtest.iml" filepath="$PROJECT_DIR$/serialtest/serialtest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testCamera/testCamera.iml" filepath="$PROJECT_DIR$/testCamera/testCamera.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testaddview/testaddview.iml" filepath="$PROJECT_DIR$/testaddview/testaddview.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testannotation/testannotation.iml" filepath="$PROJECT_DIR$/testannotation/testannotation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testarouter/testarouter.iml" filepath="$PROJECT_DIR$/testarouter/testarouter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testdagger3/testdagger3.iml" filepath="$PROJECT_DIR$/testdagger3/testdagger3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testdagger4/testdagger4.iml" filepath="$PROJECT_DIR$/testdagger4/testdagger4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testeventbus/testeventbus.iml" filepath="$PROJECT_DIR$/testeventbus/testeventbus.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testfragmentmvp/testfragmentmvp.iml" filepath="$PROJECT_DIR$/testfragmentmvp/testfragmentmvp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testarcface/testarcface.iml" filepath="$PROJECT_DIR$/testarcface/testarcface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testbar/testbar.iml" filepath="$PROJECT_DIR$/testbar/testbar.iml" />
       <module fileurl="file://$PROJECT_DIR$/testgreendao/testgreendao.iml" filepath="$PROJECT_DIR$/testgreendao/testgreendao.iml" />
       <module fileurl="file://$PROJECT_DIR$/testmodule/testmodule.iml" filepath="$PROJECT_DIR$/testmodule/testmodule.iml" />
       <module fileurl="file://D:\Program Files\DemoTest3\testCamera\testport.iml" filepath="D:\Program Files\DemoTest3\testCamera\testport.iml" />
       <module fileurl="file://$PROJECT_DIR$/testrxjava/testrxjava.iml" filepath="$PROJECT_DIR$/testrxjava/testrxjava.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testrxretrofit/testrxretrofit.iml" filepath="$PROJECT_DIR$/testrxretrofit/testrxretrofit.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testsurfaceview/testsurfaceview.iml" filepath="$PROJECT_DIR$/testsurfaceview/testsurfaceview.iml" />
       <module fileurl="file://$PROJECT_DIR$/textrxretrofit/textrxretrofit.iml" filepath="$PROJECT_DIR$/textrxretrofit/textrxretrofit.iml" />
-      <module fileurl="file://$PROJECT_DIR$/zzsm6demo/zzsm6demo.iml" filepath="$PROJECT_DIR$/zzsm6demo/zzsm6demo.iml" />
     </modules>
   </component>
 </project>
