@@ -1,4 +1,4 @@
-include ':app', ':testbar', ':textrxretrofit', ':testrxjava', ':serialtest', ':serialportlibrary',':testmodule', ':testgreendao', ':testarcface'
-//include ':testfragmentmvp', ':testdagger3', ':testdagger4', ':serialportlibrary', ':serialtest', ':testCamera', ':zzsm6demo', ':testsurfaceview', ':testannotation', ':testeventbus', ':testarouter', ':testaddview', ':testrxretrofit', ':testlambda', ':testdatabinding', ':testlivedata'
+include ':app', ':testbar', ':textrxretrofit', ':testrxjava', ':serialtest', ':serialportlibrary',':testmodule', ':testgreendao', ':testarcface', ':testlifecycle', ':testlivedata', ':loglibrary'
+//include ':testfragmentmvp', ':testdagger3', ':testdagger4', ':serialportlibrary', ':serialtest', ':testCamera', ':zzsm6demo', ':testsurfaceview', ':testannotation', ':testeventbus', ':testarouter', ':testaddview', ':testrxretrofit', ':testlambda', ':testdatabinding'
 //include ':testsm2', ':testmessengerclient', ':testmessengerserver', ':testaidlserver', ':testdagger', ':testdagger2', ':testhttps', ':testaidlclient', ':testcrash', ':testlru', ':testoicasso'
 //include ':sM62Demo'

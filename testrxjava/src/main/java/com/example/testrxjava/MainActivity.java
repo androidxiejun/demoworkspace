@@ -31,10 +31,11 @@ import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = MainActivity.class.getSimpleName();
-    private Button mBtnTurn, mBtnTime;
+    private Button mBtnTurn, mBtnTime, mBtnStop;
     private ImageView mImg;
     private TextView mTxt;
     private String data = "";
+    private Disposable disposable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtnTurn.setOnClickListener(this);
         mBtnTime = findViewById(R.id.btn_time);
         mBtnTime.setOnClickListener(this);
+        mBtnStop = findViewById(R.id.btn_stop);
+        mBtnStop.setOnClickListener(this);
         mTxt = findViewById(R.id.txt);
     }
 
@@ -55,39 +58,54 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * 观察者
      */
     private void initObserv() {
-        Observable<String> observable = Observable.create(new ObservableOnSubscribe<String>() {
+        disposable = Observable.create(new ObservableOnSubscribe<String>() {
             @Override
             public void subscribe(ObservableEmitter<String> e) throws Exception {
-                e.onNext("hello");
-                e.onNext("你好");
-                e.onComplete();
-                e.onNext("哟哟哟");
+                Thread.sleep(5 * 1000);
+                e.onNext("xiejun");
             }
-        });
+        }).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(String s) throws Exception {
+                        Log.d(TAG, "数据-----" + s);
+                    }
+                });
 
-        Observer<String> observer = new Observer<String>() {
-            @Override
-            public void onSubscribe(Disposable d) {
-                Log.i(TAG, "onSubscribe----");
-            }
-
-            @Override
-            public void onNext(String s) {
-                Log.i(TAG, "接收到----" + s);
-            }
-
-            @Override
-            public void onError(Throwable e) {
-
-            }
-
-            @Override
-            public void onComplete() {
-                Log.i(TAG, "onComplete----");
-            }
-        };
-
-        observable.subscribe(observer);
+//        Observable<String> observable = Observable.create(new ObservableOnSubscribe<String>() {
+//            @Override
+//            public void subscribe(ObservableEmitter<String> e) throws Exception {
+//                e.onNext("hello");
+//                e.onNext("你好");
+//                e.onComplete();
+//                e.onNext("哟哟哟");
+//            }
+//        });
+//
+//        Observer<String> observer = new Observer<String>() {
+//            @Override
+//            public void onSubscribe(Disposable d) {
+//                Log.i(TAG, "onSubscribe----");
+//            }
+//
+//            @Override
+//            public void onNext(String s) {
+//                Log.i(TAG, "接收到----" + s);
+//            }
+//
+//            @Override
+//            public void onError(Throwable e) {
+//
+//            }
+//
+//            @Override
+//            public void onComplete() {
+//                Log.i(TAG, "onComplete----");
+//            }
+//        };
+//
+//        observable.subscribe(observer);
     }
 
     /**
@@ -219,8 +237,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(data -> {
                     Log.i(TAG, "data------" + data);
-                }, erro->{
-                    Log.i(TAG,"报错了-----"+erro);
+                }, erro -> {
+                    Log.i(TAG, "报错了-----" + erro);
                 });
     }
 
@@ -229,10 +247,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_turn:
-                doObservalLambda();
+                initObserv();
                 break;
             case R.id.btn_time:
                 initTime();
+                break;
+            case R.id.btn_stop:
+                disposable.dispose();
                 break;
         }
     }
@@ -247,4 +268,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         };
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

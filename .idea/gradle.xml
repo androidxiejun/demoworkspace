@@ -9,11 +9,14 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/loglibrary" />
             <option value="$PROJECT_DIR$/serialportlibrary" />
             <option value="$PROJECT_DIR$/serialtest" />
             <option value="$PROJECT_DIR$/testarcface" />
             <option value="$PROJECT_DIR$/testbar" />
             <option value="$PROJECT_DIR$/testgreendao" />
+            <option value="$PROJECT_DIR$/testlifecycle" />
+            <option value="$PROJECT_DIR$/testlivedata" />
             <option value="$PROJECT_DIR$/testmodule" />
             <option value="$PROJECT_DIR$/testrxjava" />
             <option value="$PROJECT_DIR$/textrxretrofit" />

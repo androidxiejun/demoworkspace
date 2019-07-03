@@ -146,10 +146,8 @@ public class PreviewActivity extends AppCompatActivity implements ViewTreeObserv
                 }
                 List<FaceInfo> faceInfoList = new ArrayList<>();
                 int code = faceEngine.detectFaces(nv21, previewSize.width, previewSize.height, FaceEngine.CP_PAF_NV21, faceInfoList);
-                Log.i(TAG, "onPreview--1--" + code);
                 if (code == ErrorInfo.MOK && faceInfoList.size() > 0) {
                     code = faceEngine.process(nv21, previewSize.width, previewSize.height, FaceEngine.CP_PAF_NV21, faceInfoList, processMask);
-                    Log.i(TAG, "onPreview--2--" + code);
                     if (code != ErrorInfo.MOK) {
                         return;
                     }
@@ -166,7 +164,11 @@ public class PreviewActivity extends AppCompatActivity implements ViewTreeObserv
                 int face3DAngleCode = faceEngine.getFace3DAngle(face3DAngleList);
                 int livenessCode = faceEngine.getLiveness(faceLivenessInfoList);
 
-                Log.i(TAG, "人脸角度----" + face3DAngleCode);
+                for (Face3DAngle face3DAngle : face3DAngleList) {
+                    Log.i("MainA", "yaw------" + face3DAngle.getYaw());
+//                    Log.i("MainA", "roll------" + face3DAngle.getRoll());
+//                    Log.i("MainA", "pitch------" + face3DAngle.getPitch());
+                }
 
                 //有其中一个的错误码不为0，return
                 if ((ageCode | genderCode | face3DAngleCode | livenessCode) != ErrorInfo.MOK) {

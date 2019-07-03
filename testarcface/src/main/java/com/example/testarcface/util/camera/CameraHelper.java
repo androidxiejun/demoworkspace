@@ -81,6 +81,7 @@ public class CameraHelper implements Camera.PreviewCallback {
                 }
                 return;
             }
+            mCameraId=1;
             if (mCamera == null) {
                 mCamera = Camera.open(mCameraId);
             }

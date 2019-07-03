@@ -309,6 +309,7 @@ public class RegisterAndRecognizeActivity extends AppCompatActivity implements V
                 }
                 List<FacePreviewInfo> facePreviewInfoList = faceHelper.onPreviewFrame(nv21);
                 if (facePreviewInfoList != null && faceRectView != null && drawHelper != null) {
+                    Log.i("MainA", "人脸个数-----" + facePreviewInfoList.size());
                     drawPreviewInfo(facePreviewInfoList);
                 }
                 registerFace(nv21, facePreviewInfoList);
