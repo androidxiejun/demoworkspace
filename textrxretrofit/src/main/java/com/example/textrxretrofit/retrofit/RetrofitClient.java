@@ -3,16 +3,12 @@ package com.example.textrxretrofit.retrofit;
 import android.util.Log;
 
 import com.example.textrxretrofit.callback.INetCallback;
-import com.google.gson.Gson;
 
 import java.io.IOException;
-import java.util.List;
 
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;

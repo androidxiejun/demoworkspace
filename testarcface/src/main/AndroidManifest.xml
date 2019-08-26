@@ -35,6 +35,10 @@
             android:launchMode="singleTop" />
 
         <activity
+            android:name=".activity.PreviewActivity2"
+            android:launchMode="singleTop" />
+
+        <activity
             android:name=".activity.RegisterAndRecognizeActivity"
             android:launchMode="singleTop" />
 
@@ -46,9 +50,11 @@
             android:name=".activity.ChooseFunctionActivity"
             android:launchMode="singleTop">
             <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>

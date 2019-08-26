@@ -20,6 +20,7 @@ import com.arcsoft.face.FaceEngine;
 import com.example.testarcface.R;
 import com.example.testarcface.common.Constants;
 import com.example.testarcface.util.ConfigUtil;
+import com.example.testarcface.util.CpuUtil;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -44,6 +45,7 @@ public class ChooseFunctionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_function);
         initView();
+        CpuUtil.setCpuMsg();
     }
 
     private void initView() {
@@ -107,7 +109,8 @@ public class ChooseFunctionActivity extends AppCompatActivity {
      * @param view
      */
     public void jumpToPreviewActivity(View view) {
-        startActivity(new Intent(this, PreviewActivity.class));
+//        startActivity(new Intent(this, PreviewActivity.class));
+        startActivity(new Intent(this, PreviewActivity2.class));
     }
 
     /**

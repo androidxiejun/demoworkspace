@@ -1,4 +1,4 @@
-include ':app', ':testbar', ':textrxretrofit', ':testrxjava', ':serialtest', ':serialportlibrary',':testmodule', ':testgreendao', ':testarcface', ':testlifecycle', ':testlivedata', ':loglibrary'
-//include ':testfragmentmvp', ':testdagger3', ':testdagger4', ':serialportlibrary', ':serialtest', ':testCamera', ':zzsm6demo', ':testsurfaceview', ':testannotation', ':testeventbus', ':testarouter', ':testaddview', ':testrxretrofit', ':testlambda', ':testdatabinding'
-//include ':testsm2', ':testmessengerclient', ':testmessengerserver', ':testaidlserver', ':testdagger', ':testdagger2', ':testhttps', ':testaidlclient', ':testcrash', ':testlru', ':testoicasso'
+include ':app', ':testbar', ':textrxretrofit', ':testrxjava', ':serialtest', ':serialportlibrary',':testmodule', ':testgreendao', ':testarcface', ':testlifecycle', ':testlivedata', ':loglibrary', ':testaidlclient', ':testaidlserver', ':testCamera'
+//include ':testfragmentmvp', ':testdagger3', ':testdagger4', ':serialportlibrary', ':serialtest', ':zzsm6demo', ':testsurfaceview', ':testannotation', ':testeventbus', ':testarouter', ':testaddview', ':testrxretrofit', ':testlambda', ':testdatabinding'
+//include ':testsm2', ':testmessengerclient', ':testmessengerserver', ':testdagger', ':testdagger2', ':testhttps', ':testcrash', ':testlru', ':testoicasso'
 //include ':sM62Demo'

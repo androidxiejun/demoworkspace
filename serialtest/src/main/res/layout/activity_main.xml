@@ -17,6 +17,12 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btn_add_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="添加线程"/>
+
     <EditText
         android:id="@+id/edit_port"
         android:layout_width="match_parent"
