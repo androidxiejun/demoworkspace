@@ -81,12 +81,12 @@ public class CameraHelper implements Camera.PreviewCallback {
                 }
                 return;
             }
-            mCameraId=1;
+            mCameraId = 1;
             if (mCamera == null) {
-                mCamera = Camera.open(mCameraId);
+                mCamera = Camera.open(0);
             }
             displayOrientation = getCameraOri(rotation);
-            mCamera.setDisplayOrientation(displayOrientation);
+            mCamera.setDisplayOrientation(90);
             try {
                 Camera.Parameters parameters = mCamera.getParameters();
                 parameters.setPreviewFormat(ImageFormat.NV21);
@@ -150,16 +150,16 @@ public class CameraHelper implements Camera.PreviewCallback {
         additionalRotation /= 90;
         additionalRotation *= 90;
         degrees += additionalRotation;
-        int result;
-        Camera.CameraInfo info = new Camera.CameraInfo();
-        Camera.getCameraInfo(mCameraId, info);
-        if (info.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
-            result = (info.orientation + degrees) % 360;
-            result = (360 - result) % 360;
-        } else {
-            result = (info.orientation - degrees + 360) % 360;
-        }
-        return result;
+//        int result;
+//        Camera.CameraInfo info = new Camera.CameraInfo();
+//        Camera.getCameraInfo(mCameraId, info);
+//        if (info.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
+//            result = (info.orientation + degrees) % 360;
+//            result = (360 - result) % 360;
+//        } else {
+//            result = (info.orientation - degrees + 360) % 360;
+//        }
+        return 270;
     }
 
     public void stop() {
@@ -261,9 +261,9 @@ public class CameraHelper implements Camera.PreviewCallback {
 
     @Override
     public void onPreviewFrame(byte[] nv21, Camera camera) {
-        if (cameraListener != null) {
-            cameraListener.onPreview(nv21, camera);
-        }
+//        if (cameraListener != null) {
+//            cameraListener.onPreview(nv21, camera);
+//        }
     }
 
     private TextureView.SurfaceTextureListener textureListener = new TextureView.SurfaceTextureListener() {

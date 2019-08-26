@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText mDataReceiveEdit;
     private EditText mDataSendEdit;
 
+    private Button mBtnAdd;
+
     private SerialPortService serialPortService;
 
     private Button mSendBtn, mBtnOpenGate, mBtnCloseGate, mBtnInfrared, mBtnGateStatus, mBtnTurn, mBtnGunOpen, mBtnGunTYpe, mBtnClear, mBtnOPenLight, mBtnCloseLight;
@@ -85,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtnGateStatus = findViewById(R.id.btn_gate_status);
         mBtnOPenLight = findViewById(R.id.btn_open_light);
         mBtnCloseLight = findViewById(R.id.btn_close_light);
+        mBtnAdd = findViewById(R.id.btn_add_task);
 
         mSendBtn.setOnClickListener(this);
         mBtnTurn = findViewById(R.id.btn_turn);
@@ -95,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtnTurn.setOnClickListener(this);
         mBtnOPenLight.setOnClickListener(this);
         mBtnCloseLight.setOnClickListener(this);
+        mBtnAdd.setOnClickListener(this);
 
         mBtnGunOpen = findViewById(R.id.gun_gate_open);
         mBtnGunTYpe = findViewById(R.id.gun_gate_type);
@@ -108,6 +112,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.btn_add_task:
+//                new Thread(new MyTask()).start();
+                break;
             case R.id.btn_open_gate:
 //                byte[] byteOpen = serialPortService.sendData(cmd_OPEN);
 ////                byte[] byteOpen = serialPortService.sendData(cmd_OPEN_STR);
@@ -196,6 +203,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (receiveData.length > 8) {
             int i = Util.doIt(receiveData[7]);
             Log.i(TAG, "钥匙的状态------" + i);
+        }
+    }
+
+    class MyTask implements Runnable {
+        @Override
+        public void run() {
+            int num = 0;
+            while (num < 500) {
+                try {
+                    num++;
+                    Log.d(TAG, "当前线程-----" + Thread.currentThread().getName() + "       当前数值------" + num);
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 }

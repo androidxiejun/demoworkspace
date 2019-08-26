@@ -12,6 +12,9 @@
             <option value="$PROJECT_DIR$/loglibrary" />
             <option value="$PROJECT_DIR$/serialportlibrary" />
             <option value="$PROJECT_DIR$/serialtest" />
+            <option value="$PROJECT_DIR$/testCamera" />
+            <option value="$PROJECT_DIR$/testaidlclient" />
+            <option value="$PROJECT_DIR$/testaidlserver" />
             <option value="$PROJECT_DIR$/testarcface" />
             <option value="$PROJECT_DIR$/testbar" />
             <option value="$PROJECT_DIR$/testgreendao" />

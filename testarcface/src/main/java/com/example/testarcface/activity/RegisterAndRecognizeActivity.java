@@ -304,12 +304,13 @@ public class RegisterAndRecognizeActivity extends AppCompatActivity implements V
 
             @Override
             public void onPreview(final byte[] nv21, Camera camera) {
+                Log.i(TAG, "nv21----------");
                 if (faceRectView != null) {
                     faceRectView.clearFaceInfo();
                 }
                 List<FacePreviewInfo> facePreviewInfoList = faceHelper.onPreviewFrame(nv21);
                 if (facePreviewInfoList != null && faceRectView != null && drawHelper != null) {
-                    Log.i("MainA", "人脸个数-----" + facePreviewInfoList.size());
+                    Log.i(TAG, "人脸个数-----" + facePreviewInfoList.size());
                     drawPreviewInfo(facePreviewInfoList);
                 }
                 registerFace(nv21, facePreviewInfoList);
